@@ -17,6 +17,18 @@ var sampleQues = [
     num: 17,
     ques : "Create a CLI app which would detect fake news. This app will take news as input and then source.If source is Facebook or whatsapp then it will output user saying. Don't believe things on FB and Whatsapp.Can you extend this to include telegram as well?"}]
 
+function ques17()
+{
+  const fakeNewsSource = "WHATSAPP FACEBOOK TELEGRAM";
+  var source = readlineSync.question(" Please tell the source of the news ?");
+  if(-1<(fakeNewsSource.search(source.toUpperCase()))){
+    console.log("hey "+userName+", Don't believe things on FB and Whatsapp.")
+  }
+  else {
+    console.log("It seems you are having legitimate news sources")
+  }
+}
+
 function ques16()
 {
   var object = [
@@ -168,6 +180,7 @@ switch(SQ){
   case "17":
     console.log("");
   console.log(userName+", You have selected Sample Quesno."+sampleQues[4].num+": "+sampleQues[4].ques)
+    ques17();
     break;
     default : 
     console.log("");
