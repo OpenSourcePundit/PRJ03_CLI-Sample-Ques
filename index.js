@@ -12,10 +12,67 @@ var sampleQues = [
     ques : "Create two objects with name, age, and power as Ram, 2500, Treta. Krishna, 2325, Dwapar Write a function which takes two objects and return the person with more power."},
   {
     num: 16,
-    ques: "Create two objects with name, age, and power as Ram, 2500, Treta. Krishna, 2325, Dwapar. Say if every character in name is worth 35 power points."},
+    ques: "Create two objects with name, age, and power as Ram, 2500, Treta. Krishna, 2325, Dwapar. Say if every character in name is worth 35 power points.Write a function which takes two objects and return the person with more power based on their name and power both."},
   {
     num: 17,
     ques : "Create a CLI app which would detect fake news. This app will take news as input and then source.If source is Facebook or whatsapp then it will output user saying. Don't believe things on FB and Whatsapp.Can you extend this to include telegram as well?"}]
+
+function ques16()
+{
+  var object = [
+    {
+      name: "Ram",
+      power: 2500,
+      yuga: "treta"
+    },
+    {
+      name :"Krishna",
+      power: 2325,
+      yuga: "dwapar"
+    }]
+   console.log(object[0].name+"| length: "+object[0].name.length+" || "+object[1].name+"| length: "+object[1].name.length) 
+   console.log(object[0].name+"| length+POWER: "+((object[0].name.length*35)+object[0].power)+" || "+object[1].name+"| length+POWER: "+((object[1].name.length*35)+object[1].power))
+  
+  function findNamePower(objectx,objecty){
+     
+    if ((objectx.power+(objectx.name.length*35)) > (objecty.power+(objecty.name.length*35))) {
+      return objectx;      
+    }
+    else {
+      return objecty;
+    }
+  }
+  console.log("The person with greater power is: "+ findNamePower(object[0],object[1]).name);  
+  console.log("Rest details : ")
+  console.log(findNamePower(object[0],object[1]))
+  
+}
+
+function ques15()
+{
+  var object = [
+    {
+      name: "Ram",
+      power: 2500,
+      yuga: "treta"
+    },
+    {
+      name: "Krishna",
+      power: 2325,
+      yuga: "Dwapar"
+    }];
+  function findMaxPower(objectx,objecty){
+    if (objectx.power > objecty.power) {
+      return objectx;      
+    }
+    else {
+      return objecty;
+    }
+  }
+  console.log("The person with greater power is: "+ findMaxPower(object[0],object[1]).name);  
+  console.log("Rest details : ")
+  console.log(findMaxPower(object[0],object[1]))
+}
 
 function ques14()
 {
@@ -100,11 +157,13 @@ switch(SQ){
     break;
   case "15":
     console.log("");
-  console.log(userName+", You have selected Sample Quesno."+sampleQues[2].num+": "+sampleQues[2].ques)
+    console.log(userName+", You have selected Sample Quesno."+sampleQues[2].num+": "+sampleQues[2].ques)
+    ques15();
     break;
   case "16":
     console.log("");
   console.log(userName+", You have selected Sample Quesno."+sampleQues[3].num+": "+sampleQues[3].ques)
+    ques16();
     break;
   case "17":
     console.log("");
